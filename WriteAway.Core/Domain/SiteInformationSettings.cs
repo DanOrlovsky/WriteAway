@@ -16,6 +16,8 @@ namespace WriteAway.Core.Domain
 
         public string UserHasAddress { get; set; }
 
+        public string LockoutEnabled { get; set; }
+
         public string FacebookLink { get; set; }
 
         public string TwitterLink { get; set; }

@@ -7,7 +7,7 @@ using WriteAway.Core.Domain.Files;
 namespace WriteAway.Core.Domain.Users
 {
     [Table("Users")]
-    public class User : BaseEntity<int>
+    public class User : BaseEntity<Guid>
     {
 
         public string FirstName { get; set; }
@@ -18,9 +18,13 @@ namespace WriteAway.Core.Domain.Users
 
         public string Password { get; set; }
 
-        public string IsVerified { get; set; }
+        public bool IsVerified { get; set; }
 
-        public string IsActive { get; set; }
+        public bool IsActive { get; set; }
+
+        public int LoginAttempts { get; set; }
+
+        public bool IsLockedOut { get; set; }
 
         public string Bio { get; set; }
 
@@ -32,7 +36,13 @@ namespace WriteAway.Core.Domain.Users
 
         public int ImageFileId { get; set; }
 
+
         public virtual UploadedFile ImageFile { get; set; }
+
+        public User()
+        {
+            Id = Guid.NewGuid();
+        }
 
     }
 }
