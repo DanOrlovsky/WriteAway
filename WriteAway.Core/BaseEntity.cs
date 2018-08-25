@@ -16,6 +16,12 @@ namespace WriteAway.Core
         /// </summary>
         public T Id { get; set; }
 
+        public DateTime DateCreated { get; set; }
+
+        public DateTime DateModified { get; set; }
+
+        public Guid ModifiedBy { get; set; }
+
         public BaseEntity()
         {
         }
