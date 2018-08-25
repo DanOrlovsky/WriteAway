@@ -10,6 +10,12 @@ namespace WriteAway.Core.Domain
 
         public string DisplayEuCookieLawWarning { get; set; }
 
+        public string ForceEmailVerificationForUsers { get; set; }
+
+        public string AllowUserBio { get; set; }
+
+        public string UserHasAddress { get; set; }
+
         public string FacebookLink { get; set; }
 
         public string TwitterLink { get; set; }
