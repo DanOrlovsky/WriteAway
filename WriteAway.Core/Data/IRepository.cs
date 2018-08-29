@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace WriteAway.Core.Data
 {
@@ -11,14 +13,27 @@ namespace WriteAway.Core.Data
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        TEntity GetById(T Id);
+        TEntity GetById(T id);
 
+
+        /// <summary>
+        /// Async method
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<TEntity> GetByIdAsync(T id);
+
+        /// <summary>
+        /// Gets all entities Async
+        /// </summary>
+        /// <returns></returns>
+        Task<IQueryable<TEntity>> GetAllAsync();
 
         /// <summary>
         /// Gets a collection of entities
         /// </summary>
         /// <returns></returns>
-        ICollection<TEntity> GetAll();
+        IQueryable<TEntity> GetAll();
 
         /// <summary>
         /// Inserts an entity
@@ -26,6 +41,12 @@ namespace WriteAway.Core.Data
         /// <param name="entity"></param>
         void Insert(TEntity entity);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<T> InsertAsync(TEntity entity);
 
         /// <summary>
         /// Inserts a collection of entities
@@ -33,6 +54,12 @@ namespace WriteAway.Core.Data
         /// <param name="entities"></param>
         void Insert(IEnumerable<TEntity> entities);
 
+        /// <summary>
+        /// Inserts a collection Async
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <returns></returns>
+        Task InsertAsync(IEnumerable<TEntity> entities);
 
         /// <summary>
         /// Updates an entity
